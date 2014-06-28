@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<service uuid="1800">
+      <description>Generic Access Profile</description>
+ 
+	  <!-- Device Name -->                                        
+	  <!-- org.bluetooth.characteristic.gap.device_name -->
+      <characteristic uuid="2a00" id="xgatt_device_name">
+        <properties read="true" />
+        <value>DropBeacon</value>
+      </characteristic>
+
+	  <!-- Appearance -->
+	  <!-- org.bluetooth.characteristic.gap.appearance -->
+      <characteristic uuid="2a01">
+        <properties read="true" const="true" />
+        <value>0080</value>
+      </characteristic>
+    </service>
+
+    <service uuid="180A">
+      <description>Device Information</description>
+
+	  <!-- Manufacturer Name String -->
+	  <!-- org.bluetooth.characteristic.manufacturer_name_string -->
+      <characteristic uuid="2a29">
+        <properties read="true" const="true" />
+        <value>MiKro-Labs/value>
+		<description>Manufacturer Name String</description>
+      </characteristic>
+	  
+	  <!-- Model Number String -->
+	  <!-- org.bluetooth.characteristic.model_number_string -->
+	  <characteristic uuid="2a24">
+        <properties read="true" const="true" />
+        <value>DropBeacon</value>
+		<description>Model Number String</description>
+      </characteristic>
+
+	  <!-- Firmware Revision String -->
+	  <!-- org.bluetooth.characteristic.firmware_revision_string -->
+	  <characteristic uuid="2a26">
+        <properties read="true" const="true" />
+        <value>1.0</value>
+		<description>Firmware Revision String</description>
+      </characteristic>
+	  
+	  <!-- Hardware Revision String -->
+	  <!-- org.bluetooth.characteristic.hardware_revision_string -->
+	  <characteristic uuid="2a27">
+        <properties read="true" const="true" />
+        <value>1.0 Rev. C</value>
+		<description>Hardware Revision String</description>
+      </characteristic>   
+    </service>
+    
+	<service uuid="180f" advertise="true">
+        <description>Battery</description>
+        <characteristic uuid="2a19" id="c_battery_measurement">
+            <properties read="true" />
+            <value type="user" />
+        </characteristic>
+    </service>
+	
+    <service uuid="BEC9A72C-3A6B-46BF-B759-6C087238FD9E" advertise="false">
+		<description>DropBeacon Service</description>
+		<characteristic uuid="ADF34577-1D5B-42BC-A133-C19F0DD072CB" id="prox_id">
+			<description>UUID</description>
+        	<properties read="true" write="true"/>
+        	<value type="user" length="16" />
+		</characteristic>
+		
+     	<characteristic uuid="9643C6A7-0953-43CF-AE68-4AC947FE9C08" id="major_id">
+			<description>Major</description>
+        	<properties read="true" write="true"/>
+        	<value type="user" length="2" />
+		</characteristic>
+		  
+		<characteristic uuid="4A95ED34-6AE6-47E0-B6C4-F71B0D1DCCA1" id="minor_id">
+			<description>Minor</description>
+        	<properties read="true" write="true"/>
+        	<value type="user" length="2" />
+		</characteristic>
+    </service>
+    
+	<service uuid="1d14d6ee-fd63-4fa1-bfa4-8f47b42119f0">
+	    <description>Bluegiga OTA</description>
+		<characteristic uuid="f7bf3564-fb6d-4e53-88a4-5e37e0326063" id="ota_control">
+		    <properties write="true" />
+			<value length="1" type="user" />
+		</characteristic>
+		<characteristic uuid="984227f3-34fc-4045-a5d0-2c581f81a153" id="ota_data">
+		    <properties write_no_response="true" />
+			<value length="23" />
+		</characteristic>
+	</service>
+	
+</configuration>
