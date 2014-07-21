@@ -26,7 +26,7 @@
 	  <!-- org.bluetooth.characteristic.manufacturer_name_string -->
       <characteristic uuid="2a29">
         <properties read="true" const="true" />
-        <value>MiKro-Labs/value>
+        <value>MiKro-Labs</value>
 		<description>Manufacturer Name String</description>
       </characteristic>
 	  
