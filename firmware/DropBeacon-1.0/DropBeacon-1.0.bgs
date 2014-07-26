@@ -254,6 +254,8 @@ event system_boot(major, minor, patch, build, ll_version, protocol, hw)
 	# adv chennels 0x04 only 37 chaneel , 0x03 37 and 38 channel , 0x07 Three channel
 	# set advertisement interval to 125ms second, all three channels
 	call gap_set_adv_parameters(200, 200, 7) # 320ms, 320ms, all three channels.
+	# After testing this ADV rates, the battery holds only for about 6 weeks.
+	
 	
 	# Set advertisement data
 	call gap_set_adv_data(0, 30, custom_adv_data(0:30))

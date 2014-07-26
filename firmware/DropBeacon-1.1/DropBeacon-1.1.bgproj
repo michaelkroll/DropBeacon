@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+    <gatt in="DropBeacon-gatt-1.1.xml" />
+    <hardware in="DropBeacon-hardware-1.1.xml" /> 
+    <script in="DropBeacon-1.1.bgs" />
+    <image out="DropBeacon-1.1.hex" />  
+	<ota out="DropBeacon-1.1.ota" />  
+	<boot fw="bootota" />    
+    <device type="ble112" />  
+
+</project>

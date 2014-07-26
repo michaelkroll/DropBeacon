@@ -1,0 +1,7 @@
+xgatt_device_name 3
+c_battery_measurement 21
+prox_id 24
+major_id 27
+minor_id 30
+ota_control 34
+ota_data 36
