@@ -253,7 +253,11 @@ event system_boot(major, minor, patch, build, ll_version, protocol, hw)
 	# 2048 * 625us = 1280000us = 1280ms	
 	# adv chennels 0x04 only 37 chaneel , 0x03 37 and 38 channel , 0x07 Three channel
 	# set advertisement interval to ~500ms seconds, all three channels
-	call gap_set_adv_parameters(800, 800, 7) # 1280ms, 1280ms, all three channels.
+	#call gap_set_adv_parameters(800, 800, 7) # 1280ms, 1280ms, all three channels. Batter lasts for 3 months using this setting.
+	
+	# Set advertisement interval to 1000ms, all advertisement channels
+    # min and max are in 625us intervals
+    call gap_set_adv_parameters(1600, 1600, 7)
 	
 	# Set advertisement data
 	call gap_set_adv_data(0, 30, custom_adv_data(0:30))
